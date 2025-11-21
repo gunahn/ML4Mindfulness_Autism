@@ -14,7 +14,7 @@ We perform a **secondary analysis** of a randomized controlled trial (RCT) showi
 
 ## TL;DR (Key Findings)
 - **Outcome**: Responder = ≥7-point decrease on STAI-State (post vs. pre), chosen to reflect a clinically meaningful shift across category thresholds.  
-- **Sample**: n = 89 randomized (79 app users included in primary analyses; ITT reported separately).  
+- **Sample**: n = 89 randomized (73 app users included in primary analyses; ITT reported separately).  
 - **Performance**: Best AUC for state-anxiety response ≈ **0.79** (Random Forest; 95% CI **[0.66, 0.91]**).  
 - **Signal**: Baseline **anxiety severity** (STAI-S/T items) dominated importance across models; **age** showed a small negative association with response.  
 - **Personalization**: **PAI** identified individuals predicted to benefit more from the app vs. wait-list, illustrating how to move beyond group averages.
