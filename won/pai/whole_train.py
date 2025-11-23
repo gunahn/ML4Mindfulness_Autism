@@ -5,6 +5,7 @@ from training import *
 from display import *
 import torch
 from sklearn.metrics import root_mean_squared_error
+from utils import convert_feature_name
 # Linear
 from sklearn.linear_model import ElasticNet, SGDRegressor
 # Ensemble
@@ -66,6 +67,7 @@ def whole_training(baseline_score_cols, data_direc, model_name='elastic', vif_fi
     df_Qualtrics = df_Qualtrics.drop(columns=['group'])
     
     dataset_total = pd.merge(df_smart, df_Qualtrics, on='ID', how='inner')
+    # convert_feature_name(dataset_total)
 
     # Delete columns based on VIF to deal with multicollinearity
     if vif_filtering:
@@ -432,6 +434,7 @@ def whole_training(baseline_score_cols, data_direc, model_name='elastic', vif_fi
 
     # Display PAI figure
     display_PAI_interaction(total_merged.copy(), axes[1, 1])
+    total_merged.to_csv(os.path.join(save_direc, f'PAI_{"_".join(baseline_score_cols)}.csv'), index=False)
     
     # Display box plot and scatter plot of every predictions.
     validation_data = [within_predictions_wait, between_wait_hmpPrediction, between_hmp_waitPrediction, within_predictions_hmp]
@@ -531,7 +534,7 @@ def whole_training(baseline_score_cols, data_direc, model_name='elastic', vif_fi
     pai_fig, pai_ax = plt.subplots()
 
     plt.tight_layout()
-    display_PAI_interaction(total_merged.copy(), pai_ax)
+    display_PAI_interaction(total_merged.copy(), pai_ax, stat_summary_save_path=os.path.join(save_direc, f'StatSummary_{"_".join(baseline_score_cols)}.txt'))
     if save_direc is not None:
       plt.savefig(os.path.join(save_direc, f'PAI_{"_".join(baseline_score_cols)}.svg'), format='svg', 
                   bbox_inches='tight', dpi=600)
@@ -583,12 +586,12 @@ if __name__ == '__main__':
     warnings.filterwarnings("ignore", category=UserWarning)
     root_path = os.path.dirname(__file__)
     data_direc = os.path.join(root_path, "data/aixliang")
-    save_direc = os.path.join(root_path, 'results_fold3_1_tabpfn')
+    save_direc = os.path.join(root_path, 'results_fold3_5') # results_fold3_4
     os.makedirs(save_direc, exist_ok=True)
 
     # 'elastic', 'random forest', 'xgb', 'decision-tree', 'catboost', 'sgd', 'tabnet', 'tabpfn'
-    for model_name in ['elastic', 'random forest', 'xgb', 'decision-tree', 'catboost', 'sgd', 'tabnet', 'tabpfn']:
-        for score_num in [1, 2, 3]:
+    for model_name in ['sgd']:
+        for score_num in [1]:
             for vif_filtering in [True]:
                 print(f"[{model_name}-{score_num}]")
                 save_model_direc = os.path.join(save_direc, model_name, f'{score_num}-scores')
@@ -598,7 +601,7 @@ if __name__ == '__main__':
                     for i in list(itertools.combinations([
                                 "STAI Baseline STATE",
                                 "STAI Baseline TRAIT",
-                                "Promis Total Raw",
+                                #"Promis Total Raw",
                                 # "PSS Total Score"
                             ], score_num)):
                         final_feature_importance_result  = whole_training(

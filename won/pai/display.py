@@ -9,7 +9,7 @@ __all__ = [
     "display_table",
     "display_topk_ale",
 ]
-def display_PAI_interaction(df, ax):
+def display_PAI_interaction(df, ax, stat_summary_save_path=None):
     model = smf.ols('y ~ t1_anxiety + PAI * C(Received)', data=df).fit()
 
     PAI_vals = np.linspace(df['PAI'].min(), df['PAI'].max(), 100)
@@ -33,6 +33,10 @@ def display_PAI_interaction(df, ax):
     # ymax = max(pred_df['ci_upper'])
     # ymin = min(pred_df['ci_lower'])
     # dist = (ymax - ymin)*0.3
+    if stat_summary_save_path is not None:
+        with open(stat_summary_save_path, "w") as f:
+            f.write(model.summary().as_text())
+
 
 
 
