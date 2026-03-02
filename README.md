@@ -6,7 +6,7 @@
 This repository accompanies the manuscript:
 
 > **Machine learning analysis of smartphone mindfulness interventions in autistic adults: predicting responders and non-responders for anxiety reduction**  
-> Gun Ahn, Aixin Liang, Wonchang Choi, Cindy Li, John D. E. Gabrieli
+> Gun Ahn, Cindy Li, Aixin Liang, Wonchang Choi, Seoin Ahn, Clark Roberts, John D. E. Gabrieli
 
 We perform a **secondary analysis** of a randomized controlled trial (RCT) showing that a 6-week, smartphone-based mindfulness program reduced anxiety and perceived stress in autistic adults. Here, we ask: *Can baseline self-report measures predict who benefits most?* We train several ML models with **nested cross-validation**, interpret feature importance (including **SHAP**), and compute an **individualized benefit score** via the **Personalized Advantage Index (PAI)**.
 
