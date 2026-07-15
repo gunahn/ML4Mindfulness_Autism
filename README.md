@@ -31,19 +31,6 @@ We perform a **secondary analysis** of a randomized controlled trial (RCT) showi
 
 ---
 
-## Models Compared
-
-| Model | AUC | 95% CI |
-|---|---|---|
-| **Random Forest** | **0.789** | 0.66 – 0.91 |
-| TabPFN | 0.786 | 0.64 – 0.94 |
-| Logistic Regression | 0.775 | 0.73 – 0.81 |
-| XGBoost | 0.727 | — |
-| Tab-ICL | 0.707 | — |
-| TabNet | 0.675 | — |
-
----
-
 ## Methods
 - **Design**: Secondary analysis of an RCT comparing a 6-week smartphone-based mindfulness intervention with a waitlist control in autistic adults.
 - **Predictors**: Baseline demographics, autism-trait measures, and self-report questionnaires assessing anxiety symptoms, perceived stress, affect, and mindfulness.
