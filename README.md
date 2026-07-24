@@ -1,6 +1,6 @@
 # ML4Mindfulness_Autism
 
-# AI Prediction of Individual Treatment Response to Smartphone Mindfulness in Autistic Adults
+# LLM Few-Shot Learning for Predicting Individual Treatment Response to Smartphone Mindfulness in Autistic Adults
 **Predicting responders vs. non-responders to a smartphone-based mindfulness intervention from baseline questionnaires — comparing six machine learning models with GPT-4o few-shot learning.**
 
 This repository accompanies the manuscript:
