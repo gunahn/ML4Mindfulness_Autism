@@ -5,7 +5,7 @@
 
 This repository accompanies the manuscript:
 
-> **Artificial Intelligence Prediction of Individual Treatment Response to Smartphone-Based Mindfulness in Autistic Adults with Anxiety Symptoms: A Randomized Controlled Trial Analysis**
+> **Large Language Model Few-Shot Learning for Predicting Individual Treatment Response to Smartphone-Based Mindfulness in Autistic Adults With Anxiety: Secondary Analysis of a Randomized Controlled Trial**
 > Gun Ahn, Cindy Li, Aixin Liang, Wonchang Choi, Seoin Ahn, Clark Roberts, John D. E. Gabrieli
 > *JMIR AI* (2026)
 
@@ -75,9 +75,7 @@ python figures/make_figure.py   # writes figures/model_results.png
 ## Citation
 ```bibtex
 @article{ahn2026aimindfulness,
-  title   = {Artificial Intelligence Prediction of Individual Treatment Response to
-             Smartphone-Based Mindfulness in Autistic Adults with Anxiety Symptoms:
-             A Randomized Controlled Trial Analysis},
+  title   = {Large Language Model Few-Shot Learning for Predicting Individual Treatment Response to Smartphone-Based Mindfulness in Autistic Adults With Anxiety: Secondary Analysis of a Randomized Controlled Trial},
   author  = {Ahn, Gun and Li, Cindy and Liang, Aixin and Choi, Wonchang and
              Ahn, Seoin and Roberts, Clark and Gabrieli, John D. E.},
   journal = {JMIR AI},
